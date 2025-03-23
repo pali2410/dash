@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketPlace - Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            padding: 40px;
+        }
+        .left-section {
+            max-width: 50%;
+        }
+        .left-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .left-section p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .features {
+            list-style: none;
+        }
+        .features li {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+        .features li::before {
+            content: '○';
+            position: absolute;
+            left: 0;
+            color: #999;
+            font-size: 1.2em;
+        }
+        .right-section {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        .right-section .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .right-section .tabs button {
+            background: none;
+            border: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+        .right-section .tabs button.active {
+            color: #1a1a1a;
+            border-bottom: 2px solid #1a1a1a;
+        }
+        .right-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        .right-section p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .right-section input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .right-section .role-select {
+            margin-bottom: 20px;
+        }
+        .right-section select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .right-section button {
+            width: 100%;
+            padding: 12px;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .right-section button:hover {
+            background: #555;
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.9em;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h1>MarketPlace</h1>
+            <p>The marketplace for vendors and customers</p>
+            <p>Buy and sell products in a beautiful, intuitive platform</p>
+            <ul class="features">
+                <li>Sign up as a vendor to create stores and sell products</li>
+                <li>Sign up as a customer to browse and purchase products</li>
+                <li>Manage inventory, track sales, and grow your business</li>
+            </ul>
+        </div>
+        <div class="right-section">
+            <div class="tabs">
+                <button class="active">Login</button>
+                <button>Register</button>
+            </div>
+            <h2>Welcome back</h2>
+            <p>Enter your credentials to access your account</p>
+            <input type="email" placeholder="your@email.com">
+            <input type="password" placeholder="••••••••">
+            <div class="role-select">
+                <select id="userRole">
+                    <option value="vendor">Vendor</option>
+                    <option value="customer">Customer</option>
+                </select>
+            </div>
+            <button onclick="redirectToDashboard()">Login</button>
+        </div>
+    </div>
+    <div class="footer">
+        © 2025 MarketPlace. All rights reserved.
+    </div>
+
+    <script>
+        function redirectToDashboard() {
+            const role = document.getElementById('userRole').value;
+            if (role === 'vendor') {
+                window.location.href = 'vendor.html';
+            } else {
+                window.location.href = 'customer.html';
+            }
+        }
+    </script>
+</body>
+</html>
